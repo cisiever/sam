@@ -15,11 +15,15 @@ function myFunction() {
       var worker = shift[4];
       var reminder = shift[2];
       var inviteCreated = shift[7];
+      /** needed to get and set value of inviteCreated 
+      * TODO: use exisitng variables/values instead
+      **/
       var row = x+3
       var invitecol = 8
 
    if (spreadsheet.getRange(row,invitecol).isBlank()) {
        eventCal.createEvent(youth, startTime, endTime, worker);
+      /** createEvent needs startTime and endTime **/
        eventCal.createEvent(youth, reminder,reminder,worker); 
 
 spreadsheet.getRange(row,invitecol).setValue("yes")
